@@ -20,8 +20,8 @@ export default function Hello({ navigation }) {
     >
       <View style={styles.agContainer}>
         <Image
-          source={require("../assets/ag.png")}
-          style={{ height: 60, width: 60, margin: 15 }}
+          source={require("../assets/srm.png")}
+          style={{ height: 80, width: 100, margin: 15 }}
         />
       </View>
       <View style={styles.logoContainer}>

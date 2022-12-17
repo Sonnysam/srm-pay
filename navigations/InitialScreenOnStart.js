@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
-import OnBoarding from "./../screens/OnBoarding";
 import Welcome from "./../screens/Welcome";
 import Login from "./../screens/Login";
 import Signup from "./../screens/Signup";
@@ -25,6 +24,7 @@ import UserComplaints from "../screens/UserComplaints";
 import Hello from "../screens/Hello";
 import Seed from "../screens/Seed";
 import Confirm from "../screens/Confirm";
+import OnBoarding from "./../screens/Onboarding";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

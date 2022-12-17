@@ -3,12 +3,12 @@ import "firebase/firestore";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDznbLMFmFxLvPS0XB1ytoj7q0H54aMsMA",
-  authDomain: "srm-pay.firebaseapp.com",
-  projectId: "srm-pay",
-  storageBucket: "srm-pay.appspot.com",
-  messagingSenderId: "380201047463",
-  appId: "1:380201047463:web:3ed4571ea016d86afc1282",
+  apiKey: "AIzaSyBjhE7fFmAQ9F5vlJ8bNQTRmkgvw_45nMs",
+  authDomain: "srm-pay-94067.firebaseapp.com",
+  projectId: "srm-pay-94067",
+  storageBucket: "srm-pay-94067.appspot.com",
+  messagingSenderId: "1059674677858",
+  appId: "1:1059674677858:web:009c2abbbef49727eba73b",
 };
 
 // Initialize Firebase
