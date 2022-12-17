@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "SRM Pay",
+    "slug": "srm-pay",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logol.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/logow.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffff"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/logow.png",
+          "color": "#ffffff",
+          "sounds": [
+            "./local/assets/notification-sound.wav",
+            "./local/assets/notification-sound-other.wav"
+          ]
+        }
+      ]
+    ],
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logol.png",
+        "backgroundColor": "#ffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/logol.png"
+    }
+  }
+}
