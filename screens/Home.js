@@ -41,9 +41,12 @@ export default function Home({ navigation }) {
   const randomIndex = Math.floor(Math.random() * images.length);
   const randomImage = images[randomIndex];
 
+  useEffect(() => {
+    randomImage;
+  }, [randomImage]);
+
   return (
     <SafeAreaView style={styles.container}>
-      {/* <View style={styles.container}> */}
       <View style={[styles.top, styles.bg]}></View>
       <View style={styles.hello}>
         <Text style={styles.name}>Hello, </Text>

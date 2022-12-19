@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: "20%",
-    // marginHorizontal: 10,
+    marginHorizontal: 10,
   },
   hello: {
     marginHorizontal: 10,
@@ -161,8 +161,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   complaintImage: {
-    height: 150,
-    width: 150,
+    height: 200,
+    width: 200,
     marginBottom: 25,
   },
   textAreaContainer: {
