@@ -58,13 +58,6 @@ export default function Complaint({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {/* <TouchableOpacity
-        style={styles.hello}
-        onPress={() => navigation.push("Home")}
-      >
-        <AntDesign name="arrowleft" size={24} color="white" />
-      </TouchableOpacity> */}
-
       <ScrollView
         Vertical
         showsVerticalScrollIndicator={false}

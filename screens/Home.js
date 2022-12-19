@@ -24,6 +24,7 @@ import Needhelp from "../constants/Needhelp";
 export default function Home({ navigation }) {
   const dispatch = useDispatch();
   const { userInfo, uid } = useSelector((state) => state.AuthReducer);
+  const [randomPhoto, setRandomPhoto] = useState(null);
 
   // useEffect(() => {
   //   console.log(userInfo);
@@ -36,14 +37,24 @@ export default function Home({ navigation }) {
     require("../assets/2.jpg"),
     require("../assets/3.jpg"),
     require("../assets/4.png"),
+    require("../assets/5.jpeg"),
+    require("../assets/6.jpeg"),
+    require("../assets/7.jpg"),
   ];
 
   const randomIndex = Math.floor(Math.random() * images.length);
   const randomImage = images[randomIndex];
 
+  // useeffect to make images change after 5 seconds
   useEffect(() => {
-    randomImage;
-  }, [randomImage]);
+    const interval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const randomImage = images[randomIndex];
+      setRandomPhoto(randomImage);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -181,7 +192,7 @@ const styles = StyleSheet.create({
   },
   cardBackground: {
     height: 150,
-    width: 160,
+    width: 165,
     borderRadius: 15,
   },
   cardItems: {
