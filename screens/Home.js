@@ -31,6 +31,23 @@ export default function Home({ navigation }) {
 
   // const img = userInfo?.profilePhoto;
 
+  const images = [
+    require("../assets/cover.jpeg"),
+    require("../assets/pray.jpg"),
+    require("../assets/tithe.jpg"),
+    require("../assets/cal.png"),
+  ];
+
+  // const RandomImage = () => {
+  //   return images[Math.floor(Math.random() * images.length)];
+  // };
+  // useEffect(() => {
+
+  // }, []);
+
+  const randomIndex = Math.floor(Math.random() * images.length);
+  const randomImage = images[randomIndex];
+
   return (
     <SafeAreaView style={styles.container}>
       {/* <View style={styles.container}> */}
@@ -59,7 +76,8 @@ export default function Home({ navigation }) {
         <View style={styles.bottomImage}>
           <Image
             style={styles.carousel}
-            source={require("../assets/cover.jpeg")}
+            // source={require("../assets/cover.jpeg")}
+            source={randomImage}
           />
         </View>
         <View style={styles.cardContainer}>
