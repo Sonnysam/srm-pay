@@ -43,14 +43,6 @@ export default function UserComplaints({ navigation }) {
     getGeneralComplaints();
   }, []);
 
-  const data = [
-    {
-      id: "123",
-      label:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam dignissimos aut libero, sunt eligendi eveniet dicta omnis corporis tempora sit?",
-    },
-  ];
-
   return (
     <View style={styles.container}>
       <View style={[styles.top, styles.bg]}></View>
@@ -110,19 +102,22 @@ export default function UserComplaints({ navigation }) {
                     </View>
                     <View style={styles.cardText}>
                       <Text style={styles.des}>
-                        Complaints: {itemData.item.complaint}
+                        Complaints: {itemData?.item?.complaint}
+                      </Text>
+                      <View style={styles.compSpace}></View>
+                      <Text style={styles.des}>
+                        Name: {itemData?.item?.UserName}
                       </Text>
                       <Text style={styles.des}>
-                        Name: {itemData.item.customerName}
+                        Email: {itemData?.item?.email}
                       </Text>
                       <Text style={styles.des}>
-                        Email: {itemData.item.email}
+                        Phone Number: {itemData?.item?.phoneNo}
                       </Text>
+                      <Text style={styles.des}>Uid: {itemData?.item?.uid}</Text>
                       <Text style={styles.des}>
-                        Phone Number: {itemData.item.phoneNo}
+                        Date: {itemData?.item?.date}
                       </Text>
-                      <Text style={styles.des}>Uid: {itemData.item.uid}</Text>
-                      <Text style={styles.des}>Date: {itemData.item.date}</Text>
                     </View>
                   </View>
                 </View>
@@ -193,7 +188,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   button: {
-    backgroundColor: Colors.dark,
+    backgroundColor: Colors.primary,
     padding: 8,
     borderRadius: 10,
   },
@@ -216,8 +211,8 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   card: {
-    marginTop: 8,
-    height: 200,
+    marginTop: 10,
+    height: 210,
     width: "100%",
     elevation: 10,
     backgroundColor: Colors.white,
@@ -240,5 +235,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginLeft: 10,
     width: "80%",
+  },
+  des: {
+    fontSize: 15,
+    fontWeight: "500",
+    color: Colors.dark,
+    marginVertical: 5,
+  },
+  compSpace: {
+    height: 10,
   },
 });

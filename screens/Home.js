@@ -33,17 +33,10 @@ export default function Home({ navigation }) {
 
   const images = [
     require("../assets/cover.jpeg"),
-    require("../assets/pray.jpg"),
-    require("../assets/tithe.jpg"),
-    require("../assets/cal.png"),
+    require("../assets/2.jpg"),
+    require("../assets/3.jpg"),
+    require("../assets/4.png"),
   ];
-
-  // const RandomImage = () => {
-  //   return images[Math.floor(Math.random() * images.length)];
-  // };
-  // useEffect(() => {
-
-  // }, []);
 
   const randomIndex = Math.floor(Math.random() * images.length);
   const randomImage = images[randomIndex];

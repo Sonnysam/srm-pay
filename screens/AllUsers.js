@@ -103,16 +103,7 @@ export default function AllUsers({ navigation }) {
                       <Text style={styles.des}>
                         Email: {itemData.item.Email}
                       </Text>
-                      <Text style={styles.des}>
-                        Location: {itemData.item.Location?.description}
-                      </Text>
                       <Text style={styles.des}>Uid : {itemData.item.Uid}</Text>
-                      <Text style={styles.des}>
-                        User Type: {itemData.item.userType}
-                      </Text>
-                      <Text style={styles.des}>
-                        Number Plate: {itemData.item.numberPlate}
-                      </Text>
                     </View>
                   </View>
                 </View>
@@ -183,7 +174,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   button: {
-    backgroundColor: Colors.dark,
+    backgroundColor: Colors.primary,
     padding: 8,
     borderRadius: 10,
   },
@@ -230,5 +221,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginLeft: 10,
     width: "80%",
+  },
+  des: {
+    fontSize: 15,
+    fontWeight: "500",
+    color: Colors.dark,
+    marginVertical: 5,
   },
 });
