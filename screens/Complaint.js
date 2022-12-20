@@ -130,7 +130,7 @@ export default function Complaint({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: "20%",
+    marginTop: 40,
     marginHorizontal: 10,
   },
   hello: {
@@ -174,8 +174,6 @@ const styles = StyleSheet.create({
     height: 55,
     borderColor: Colors.primary,
     borderWidth: 1,
-    borderRightWidth: 1,
-    borderLeftWidth: 1,
     borderTopWidth: 1,
     marginTop: 15,
     borderRadius: 10,
@@ -185,6 +183,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: 20,
   },
   callContainer: {
     flex: 1,

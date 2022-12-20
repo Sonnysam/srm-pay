@@ -59,19 +59,19 @@ export default function Signup({ navigation }) {
     // e.target.reset();
   };
   return (
-    <View style={styles.container}>
+    <ScrollView
+      style={styles.container}
+      showsVerticalScrollIndicator={false}
+      Vertical
+      bounces={false}
+    >
       <View style={styles.logoContainer}>
         <Image
           source={require("../assets/logow.png")}
           style={{ height: 200, width: 300 }}
         />
       </View>
-      <ScrollView
-        style={styles.formContainer}
-        showsVerticalScrollIndicator={false}
-        Vertical
-        bounces={false}
-      >
+      <View style={styles.formContainer}>
         <KeyboardAvoidingView style={styles.form}>
           <View style={styles.inputGroup}>
             <Feather name="user" size={24} color="black" />
@@ -178,19 +178,17 @@ export default function Signup({ navigation }) {
             </TouchableOpacity>
           </View>
         </KeyboardAvoidingView>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 45,
   },
   logoContainer: {
+    marginTop: 45,
     justifyContent: "center",
     alignItems: "center",
   },

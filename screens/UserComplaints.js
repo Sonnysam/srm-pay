@@ -101,10 +101,12 @@ export default function UserComplaints({ navigation }) {
                       />
                     </View>
                     <View style={styles.cardText}>
-                      <Text style={styles.des}>
-                        Complaints: {itemData?.item?.complaint}
-                      </Text>
-                      <View style={styles.compSpace}></View>
+                      <View style={styles.compSpace}>
+                        <Text style={styles.comp}>Complaints: </Text>
+                        <Text style={styles.compDes}>
+                          {itemData?.item?.complaint}
+                        </Text>
+                      </View>
                       <Text style={styles.des}>
                         Name: {itemData?.item?.UserName}
                       </Text>
@@ -212,7 +214,7 @@ const styles = StyleSheet.create({
   },
   card: {
     marginTop: 10,
-    height: 210,
+    height: 250,
     width: "100%",
     elevation: 10,
     backgroundColor: Colors.white,
@@ -242,7 +244,23 @@ const styles = StyleSheet.create({
     color: Colors.dark,
     marginVertical: 5,
   },
+  comp: {
+    fontSize: 15,
+    fontWeight: "500",
+    color: Colors.white,
+    marginVertical: 5,
+  },
   compSpace: {
-    height: 10,
+    flexDirection: "row",
+    backgroundColor: Colors.primary,
+    padding: 5,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+  },
+  compDes: {
+    fontSize: 15,
+    fontWeight: "500",
+    color: Colors.white,
+    marginVertical: 5,
   },
 });

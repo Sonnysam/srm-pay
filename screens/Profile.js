@@ -35,7 +35,7 @@ export default function Profile({ navigation }) {
           type: AuthAction.USER_TYPE,
           userToken: false,
         });
-        navigation.replace("Login");
+        navigation.replace("OnBoarding");
       })
       .catch((error) => alert(error.message));
   };
