@@ -49,7 +49,7 @@ export default function Forgot({ navigation }) {
             <TextInput
               style={styles.input}
               placeholder="Email"
-              placeholderTextColor="#CCCC"
+              // placeholderTextColor="#CCCC"
               value={email}
               onChangeText={(text) => setEmail(text)}
             />
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     paddingLeft: 10,
-    color: Colors.grey,
+    color: Colors.dark,
     fontSize: 20,
   },
   checkContainer: {

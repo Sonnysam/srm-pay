@@ -21,7 +21,7 @@ export default function Hello({ navigation }) {
       <View style={styles.agContainer}>
         <Image
           source={require("../assets/srm.png")}
-          style={{ height: 80, width: 100, margin: 15 }}
+          style={{ height: 80, width: 120, margin: 15 }}
         />
       </View>
       <View style={styles.logoContainer}>

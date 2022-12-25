@@ -68,10 +68,10 @@ export default function Calculate({ navigation }) {
             </TouchableOpacity>
             {percentage ? (
               <View style={{ flexDirection: "row" }}>
-                <Text style={[styles.bottomText2, { marginRight: 3 }]}>
+                <Text style={[styles.bottomText2, { marginRight: 4 }]}>
                   Hello {userInfo?.UserName}, your tithe is
                 </Text>
-                <Text style={styles.bottomText2}>GH₵{percentage}</Text>
+                <Text style={styles.bottomText3}>GH₵{percentage}</Text>
               </View>
             ) : null}
             <TouchableOpacity
@@ -129,6 +129,12 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "normal",
     color: Colors.secondary,
+  },
+  bottomText3: {
+    marginTop: 10,
+    fontSize: 15,
+    fontWeight: "normal",
+    color: Colors.white,
   },
   form: {
     flex: 1,

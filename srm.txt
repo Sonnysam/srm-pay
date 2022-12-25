@@ -1,0 +1,2 @@
+primary - #872E27
+secondary - #D02228
