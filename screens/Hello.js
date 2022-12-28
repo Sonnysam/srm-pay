@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.dark,
+    // backgroundColor: Colors.white,
     opacity: 0.9,
   },
   agContainer: {

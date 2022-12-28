@@ -22,6 +22,17 @@
             "./local/assets/notification-sound-other.wav"
           ]
         }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/logol.png",
+          "color": "#ffffff",
+          "sounds": [
+            "./assets/notification-sound.wav",
+            "./assets/notification-sound-other.wav"
+          ]
+        }
       ]
     ],
     "updates": {
