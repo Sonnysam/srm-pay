@@ -18,8 +18,8 @@
           "icon": "./assets/logow.png",
           "color": "#ffffff",
           "sounds": [
-            "./local/assets/notification-sound.wav",
-            "./local/assets/notification-sound-other.wav"
+            "./assets/notification-sound.wav",
+            "./assets/notification-sound-other.wav"
           ]
         }
       ],
@@ -46,10 +46,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/logol.png",
         "backgroundColor": "#ffff"
-      }
+      },
+      "package": "com.sonny067.srmpay"
     },
     "web": {
       "favicon": "./assets/logol.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e3a64098-ab63-48b0-8dfd-37ab912db2ab"
+      }
     }
   }
 }
