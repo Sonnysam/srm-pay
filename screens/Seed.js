@@ -47,7 +47,7 @@ export default function Seed({ navigation }) {
                 style={styles.checkbox}
                 value={isChecked}
                 onValueChange={setChecked}
-                color={isChecked ? Colors.secondary : undefined}
+                color={isChecked ? Colors.primary : undefined}
               />
               <Text style={styles.paragraph}>Special Offering</Text>
             </View>
@@ -56,7 +56,7 @@ export default function Seed({ navigation }) {
                 style={styles.checkbox}
                 value={isChecked1}
                 onValueChange={setChecked1}
-                color={isChecked1 ? Colors.secondary : undefined}
+                color={isChecked1 ? Colors.primary : undefined}
               />
               <Text style={styles.paragraph}>Sow Seed</Text>
             </View>
