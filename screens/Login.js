@@ -14,6 +14,8 @@ import Checkbox from "expo-checkbox";
 import { auth, db } from "../firebase/firebase";
 import { useDispatch } from "react-redux";
 import { AuthAction } from "../store/actions/AuthAction";
+import { Entypo } from "@expo/vector-icons";
+import tw from "twrnc";
 
 export default function Login({ navigation }) {
   const dispatch = useDispatch();
@@ -22,6 +24,12 @@ export default function Login({ navigation }) {
 
   const [loading, setLoading] = useState(false);
   const [isChecked, setChecked] = useState(false);
+
+  const [secureTextEntry, setSecureTextEntry] = useState(true);
+
+  const toggleSecureTextEntry = () => {
+    setSecureTextEntry(!secureTextEntry);
+  };
 
   function getUserInfo(user) {
     db.collection("users")
@@ -82,7 +90,7 @@ export default function Login({ navigation }) {
               autoCorrect={false}
             />
           </View>
-          <View style={styles.inputGroup}>
+          {/* <View style={styles.inputGroup}>
             <Feather name="lock" size={24} color="black" />
             <TextInput
               style={styles.input}
@@ -91,6 +99,33 @@ export default function Login({ navigation }) {
               value={password}
               onChangeText={(text) => setPassword(text)}
             />
+          </View> */}
+          <View
+            style={[
+              styles.inputGroup,
+              tw`flex flex-row items-center justify-between`,
+            ]}
+          >
+            <View style={tw`flex flex-row items-center`}>
+              <Feather name="lock" size={24} color="black" />
+              <TextInput
+                placeholder="Password"
+                placeholderTextColor="#000"
+                value={password}
+                autoCapitalize="none"
+                autoCorrect={false}
+                secureTextEntry={secureTextEntry}
+                onChangeText={(text) => setPassword(text)}
+                style={tw`ml-2`}
+              />
+            </View>
+            <TouchableOpacity onPress={toggleSecureTextEntry}>
+              {secureTextEntry ? (
+                <Entypo name="eye" size={24} color="black" />
+              ) : (
+                <Entypo name="eye-with-line" size={24} color="black" />
+              )}
+            </TouchableOpacity>
           </View>
 
           <View style={styles.checkContainer}>
@@ -171,6 +206,21 @@ const styles = StyleSheet.create({
     color: Colors.dark,
     fontSize: 16,
   },
+  // input: {
+  //   width: "100%",
+  //   height: 55,
+  //   borderColor: Colors.white,
+  //   borderWidth: 1,
+  //   borderRightWidth: 1,
+  //   borderLeftWidth: 1,
+  //   borderTopWidth: 1,
+  //   marginTop: 12,
+  //   borderRadius: 8,
+  //   paddingHorizontal: 10,
+  //   fontSize: 17,
+  //   color: "#000",
+  //   backgroundColor: Colors.white,
+  // },
   checkContainer: {
     flexDirection: "row",
     marginBottom: 20,
