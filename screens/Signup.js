@@ -17,6 +17,8 @@ import { AuthAction } from "../store/actions/AuthAction";
 import { auth, db } from "../firebase/firebase";
 import { FontAwesome5 } from "@expo/vector-icons";
 import Pick from "../constants/Pick";
+import { Entypo } from "@expo/vector-icons";
+import tw from "twrnc";
 
 export default function Signup({ navigation }) {
   const dispatch = useDispatch();
@@ -25,6 +27,12 @@ export default function Signup({ navigation }) {
 
   const { name, email, password, churchName, phoneNo, profilePhoto } =
     useSelector((state) => state.AuthReducer);
+
+  const [secureTextEntry, setSecureTextEntry] = useState(true);
+
+  const toggleSecureTextEntry = () => {
+    setSecureTextEntry(!secureTextEntry);
+  };
 
   const handleSignUp = async () => {
     // e.preventDefault();
@@ -105,7 +113,7 @@ export default function Signup({ navigation }) {
               value={email}
             />
           </View>
-          <View style={styles.inputGroup}>
+          {/* <View style={styles.inputGroup}>
             <Feather name="lock" size={24} color="black" />
             <TextInput
               style={styles.input}
@@ -119,6 +127,38 @@ export default function Signup({ navigation }) {
               }
               value={password}
             />
+          </View> */}
+          <View
+            style={[
+              styles.inputGroup,
+              tw`flex flex-row items-center justify-between`,
+            ]}
+          >
+            <View style={tw`flex flex-row items-center`}>
+              <Feather name="lock" size={24} color="black" />
+              <TextInput
+                placeholder="Password"
+                placeholderTextColor="#000"
+                value={password}
+                autoCapitalize="none"
+                autoCorrect={false}
+                secureTextEntry={secureTextEntry}
+                onChangeText={(e) =>
+                  dispatch({
+                    type: AuthAction.USERPROFILE,
+                    payload: { type: "password", value: e },
+                  })
+                }
+                style={tw`ml-2`}
+              />
+            </View>
+            <TouchableOpacity onPress={toggleSecureTextEntry}>
+              {secureTextEntry ? (
+                <Entypo name="eye" size={24} color="black" />
+              ) : (
+                <Entypo name="eye-with-line" size={24} color="black" />
+              )}
+            </TouchableOpacity>
           </View>
           <View style={styles.inputGroup}>
             <FontAwesome5 name="church" size={22} color="black" />
