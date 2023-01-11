@@ -128,13 +128,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 15,
     fontWeight: "normal",
-    color: Colors.secondary,
+    color: Colors.white,
   },
   bottomText3: {
     marginTop: 10,
-    fontSize: 15,
-    fontWeight: "normal",
-    color: Colors.white,
+    fontSize: 16,
+    fontWeight: "700",
+    color: Colors.link,
   },
   form: {
     flex: 1,

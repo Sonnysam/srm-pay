@@ -2,18 +2,18 @@ import {
   StyleSheet,
   Text,
   View,
-  ImageBackground,
-  FlatList,
   TouchableOpacity,
   ScrollView,
-  TextInput,
   Image,
+  Alert,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import Colors from "../constants/Colors";
 import { useSelector, useDispatch } from "react-redux";
 import { AuthAction } from "../store/actions/AuthAction";
 import { auth } from "../firebase/firebase";
+import ModalAlert from "../constants/ModalAlert";
+
 // import { pickImage } from "../constants/Pick";
 
 export default function Profile({ navigation }) {
@@ -38,6 +38,17 @@ export default function Profile({ navigation }) {
         navigation.replace("OnBoarding");
       })
       .catch((error) => alert(error.message));
+  };
+
+  const Modal = () => {
+    Alert.alert("SRM PAY", "Do you really want to logout", [
+      {
+        text: "Cancel",
+        onPress: () => console.log("Cancel Pressed"),
+        style: "Cancel",
+      },
+      { text: "Logout", onPress: handleSignOut },
+    ]);
   };
   return (
     <View style={styles.container}>
@@ -80,7 +91,8 @@ export default function Profile({ navigation }) {
           </View>
 
           {/* Onpress of btn to be changed to firebase signout function */}
-          <TouchableOpacity style={styles.payGroup} onPress={handleSignOut}>
+          {/* <TouchableOpacity style={styles.payGroup} onPress={handleSignOut}> */}
+          <TouchableOpacity style={styles.payGroup} onPress={Modal}>
             <Text style={styles.pay}>Log Out</Text>
           </TouchableOpacity>
         </View>
