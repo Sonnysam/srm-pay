@@ -38,10 +38,10 @@ export default function Pick() {
           {" "}
           <FontAwesome
             name="file-photo-o"
-            size={20}
+            size={18}
             color={Colors.primary}
           />{" "}
-          Upload profile
+          Upload photo
         </Text>
       </TouchableOpacity>
       <View style={styles.photo}>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   add: {
     color: Colors.primary,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold",
   },
   image: {
