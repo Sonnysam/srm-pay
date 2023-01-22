@@ -61,9 +61,14 @@ export default function Home({ navigation }) {
       <View style={[styles.top, styles.bg]}></View>
       <View style={styles.hello}>
         <Text style={styles.name}>Hello, </Text>
-        <Text style={[styles.name, { color: Colors.primary }]}>
+        {/* <Text style={[styles.name, { color: Colors.primary }]}>
           {userInfo?.UserName}
-        </Text>
+        </Text> */}
+          <Text style={styles.hello}>
+            {userInfo?.UserName
+              ? "Hello, " + userInfo?.UserName
+              : "Hello friend"}
+          </Text>
       </View>
       <Text style={styles.helloSub}>Have you paid your tithe?</Text>
       <View style={styles.headerImage}>
