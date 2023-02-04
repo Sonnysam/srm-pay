@@ -14,6 +14,7 @@ import { AuthAction } from "../store/actions/AuthAction";
 import { auth } from "../firebase/firebase";
 import ModalAlert from "../constants/ModalAlert";
 
+
 // import { pickImage } from "../constants/Pick";
 
 export default function Profile({ navigation }) {

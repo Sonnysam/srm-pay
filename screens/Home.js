@@ -5,26 +5,18 @@ import {
   ImageBackground,
   FlatList,
   TouchableOpacity,
-  ScrollView,
-  TextInput,
   Image,
-  Dimensions,
   SafeAreaView,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import Colors from "../constants/Colors";
-import { AntDesign } from "@expo/vector-icons";
-import { FontAwesome } from "@expo/vector-icons";
 import { useSelector, useDispatch } from "react-redux";
-import Slider from "../constants/Slider";
-import { AuthAction } from "../store/actions/AuthAction";
-import { auth, db } from "../firebase/firebase";
 import Needhelp from "../constants/Needhelp";
 
 export default function Home({ navigation }) {
   const dispatch = useDispatch();
-  const { userInfo, uid } = useSelector((state) => state.AuthReducer);
-  const [randomPhoto, setRandomPhoto] = useState(null);
+  const { userInfo } = useSelector((state) => state.AuthReducer);
+  // const [randomPhoto, setRandomPhoto] = useState(null);
 
   // useEffect(() => {
   //   console.log(userInfo);
@@ -61,14 +53,14 @@ export default function Home({ navigation }) {
       <View style={[styles.top, styles.bg]}></View>
       <View style={styles.hello}>
         <Text style={styles.name}>Hello, </Text>
-        {/* <Text style={[styles.name, { color: Colors.primary }]}>
+        <Text style={[styles.name, { color: Colors.primary }]}>
           {userInfo?.UserName}
-        </Text> */}
-          <Text style={styles.hello}>
+        </Text>
+          {/* <Text style={styles.hello}>
             {userInfo?.UserName
               ? "Hello, " + userInfo?.UserName
               : "Hello friend"}
-          </Text>
+          </Text> */}
       </View>
       <Text style={styles.helloSub}>Have you paid your tithe?</Text>
       <View style={styles.headerImage}>

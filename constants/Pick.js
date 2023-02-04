@@ -41,7 +41,7 @@ export default function Pick() {
             size={18}
             color={Colors.primary}
           />{" "}
-          Upload photo
+           Upload photo
         </Text>
       </TouchableOpacity>
       <View style={styles.photo}>
