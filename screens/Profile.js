@@ -12,7 +12,7 @@ import Colors from "../constants/Colors";
 import { useSelector, useDispatch } from "react-redux";
 import { AuthAction } from "../store/actions/AuthAction";
 import { auth } from "../firebase/firebase";
-import ModalAlert from "../constants/ModalAlert";
+// import ModalAlert from "../constants/ModalAlert";
 
 
 // import { pickImage } from "../constants/Pick";

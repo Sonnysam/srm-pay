@@ -62,7 +62,10 @@ export default function Login({ navigation }) {
         // navigation.push("UserDashboard");
         navigation.push("Hello");
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => {
+        alert(error.message);
+        setLoading(false);
+      });
   };
 
   return (
