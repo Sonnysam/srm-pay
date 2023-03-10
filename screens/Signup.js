@@ -160,6 +160,40 @@ export default function Signup({ navigation }) {
               )}
             </TouchableOpacity>
           </View>
+
+          {/* Confirm Password */}
+          <View
+            style={[
+              styles.inputGroup,
+              tw`flex flex-row items-center justify-between`,
+            ]}
+          >
+            <View style={tw`flex flex-row items-center`}>
+              <Feather name="lock" size={24} color="black" />
+              <TextInput
+                placeholder="Confirm Password"
+                placeholderTextColor="#000"
+                value={password}
+                autoCapitalize="none"
+                autoCorrect={false}
+                secureTextEntry={secureTextEntry}
+                onChangeText={(e) =>
+                  dispatch({
+                    type: AuthAction.USERPROFILE,
+                    payload: { type: "password", value: e },
+                  })
+                }
+                style={tw`ml-2`}
+              />
+            </View>
+            <TouchableOpacity onPress={toggleSecureTextEntry}>
+              {secureTextEntry ? (
+                <Entypo name="eye" size={24} color="black" />
+              ) : (
+                <Entypo name="eye-with-line" size={24} color="black" />
+              )}
+            </TouchableOpacity>
+          </View>
           <View style={styles.inputGroup}>
             <FontAwesome5 name="church" size={22} color="black" />
             <TextInput
