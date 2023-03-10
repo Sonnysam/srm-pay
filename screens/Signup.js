@@ -25,10 +25,20 @@ export default function Signup({ navigation }) {
   const [isChecked, setChecked] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { name, email, password, churchName, phoneNo, profilePhoto } =
-    useSelector((state) => state.AuthReducer);
+  const {
+    name,
+    email,
+    password,
+    churchName,
+    phoneNo,
+    profilePhoto,
+    confirmPassword,
+  } = useSelector((state) => state.AuthReducer);
 
   const [secureTextEntry, setSecureTextEntry] = useState(true);
+
+  // const [password, setPassword] = useState('');
+  // const [confirmPassword, setConfirmPassword] = useState('');
 
   const toggleSecureTextEntry = () => {
     setSecureTextEntry(!secureTextEntry);
@@ -79,6 +89,27 @@ export default function Signup({ navigation }) {
           style={{ height: 200, width: 300 }}
         />
       </View>
+      <View style={{
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        paddingHorizontal: 20,
+        marginVertical: 10,
+      }}>
+            <Text style={styles.error}>
+              {" "}
+              {
+                (password !== confirmPassword && (
+                  <Text style={{ color: "red" }}>Passwords do not match</Text>
+                )) ||
+                (password.length < 6 && (
+                  <Text style={{ color: "red" }}>
+                    Password must be at least 6 characters
+                  </Text>
+                ))
+              }
+            </Text>
+          </View>
       <View style={styles.formContainer}>
         <KeyboardAvoidingView style={styles.form}>
           <View style={styles.inputGroup}>
@@ -173,14 +204,14 @@ export default function Signup({ navigation }) {
               <TextInput
                 placeholder="Confirm Password"
                 placeholderTextColor="#000"
-                value={password}
+                value={confirmPassword}
                 autoCapitalize="none"
                 autoCorrect={false}
                 secureTextEntry={secureTextEntry}
                 onChangeText={(e) =>
                   dispatch({
                     type: AuthAction.USERPROFILE,
-                    payload: { type: "password", value: e },
+                    payload: { type: "confirmPassword", value: e },
                   })
                 }
                 style={tw`ml-2`}
@@ -194,6 +225,21 @@ export default function Signup({ navigation }) {
               )}
             </TouchableOpacity>
           </View>
+          {/* <View>
+            <Text style={styles.error}>
+              {" "}
+              {
+                (password !== confirmPassword && (
+                  <Text style={{ color: "red" }}>Passwords do not match</Text>
+                )) ||
+                (password.length < 6 && (
+                  <Text style={{ color: "red" }}>
+                    Password must be at least 6 characters
+                  </Text>
+                ))
+              }
+            </Text>
+          </View> */}
           <View style={styles.inputGroup}>
             <FontAwesome5 name="church" size={22} color="black" />
             <TextInput
@@ -352,6 +398,12 @@ const styles = StyleSheet.create({
   new: {
     color: Colors.white,
     fontSize: 16,
+    fontWeight: "500",
+    marginRight: 5,
+  },
+  error: {
+    color: "red",
+    fontSize: 18,
     fontWeight: "500",
     marginRight: 5,
   },

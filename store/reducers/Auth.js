@@ -5,6 +5,7 @@ const AuthReducer = (
     name: "",
     email: null,
     password: null,
+    confirmPassword: null,
     phoneNo: null,
     churchName: null,
 
@@ -28,6 +29,8 @@ const AuthReducer = (
         case "password":
           state.password = action.payload.value;
           break;
+        case "confirmPassword":
+          state.confirmPassword = action.payload.value;
         case "profilePhoto":
           state.profilePhoto = action.payload.value;
           break;
