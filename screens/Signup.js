@@ -37,8 +37,6 @@ export default function Signup({ navigation }) {
 
   const [secureTextEntry, setSecureTextEntry] = useState(true);
 
-  // const [password, setPassword] = useState('');
-  // const [confirmPassword, setConfirmPassword] = useState('');
 
   const toggleSecureTextEntry = () => {
     setSecureTextEntry(!secureTextEntry);

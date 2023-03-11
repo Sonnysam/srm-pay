@@ -31,6 +31,7 @@ const AuthReducer = (
           break;
         case "confirmPassword":
           state.confirmPassword = action.payload.value;
+          break;
         case "profilePhoto":
           state.profilePhoto = action.payload.value;
           break;
